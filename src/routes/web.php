@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::middleware('auth')->group(function () {});
-Route::get('/', [AuthController::class, 'index']);
+Route::get('/', [ItemController::class, 'index']);
+Route::get('/item/create', [ItemController::class, 'create']);
+Route::post('/item/upload', [ItemController::class, 'store']);
+//Route::post('/item/upload', [ItemController::class, 'store']);
