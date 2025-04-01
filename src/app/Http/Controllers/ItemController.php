@@ -25,10 +25,10 @@ class ItemController extends Controller
         $Item = $request->only(['content', 'name', 'price']);
         Item::create($Item);
 
-        return redirect('item/upload');
+        return view('upload');
     }
-    public function upload(Request $request)
+    public function mypage(Request $request)
     {
-        return view('item/upload');
+        return view('mypage');
     }
 }

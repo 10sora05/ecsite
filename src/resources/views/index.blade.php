@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
+
 @section('content')
 
-<body>
     <div class="index__content">
 
         <div class="index__heading">
@@ -65,9 +65,5 @@
 
 
     </div>
-</body>
 
-<footer>
-
-</footer>
 @endsection

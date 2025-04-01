@@ -18,4 +18,5 @@ Route::middleware('auth')->group(function () {});
 Route::get('/', [ItemController::class, 'index']);
 Route::get('/item/create', [ItemController::class, 'create']);
 Route::post('/item/upload', [ItemController::class, 'store']);
-//Route::post('/item/upload', [ItemController::class, 'store']);
+Route::post('/register', [ItemController::class, 'store']);
+Route::get('/mypage', [ItemController::class, 'mypage']);
