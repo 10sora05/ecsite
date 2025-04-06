@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\ItemController;
 
 Route::middleware('auth')->group(function () {});
 Route::get('/', [ItemController::class, 'index']);
+Route::post('/', [ItemController::class, 'index']);
 Route::get('/item/create', [ItemController::class, 'create']);
 Route::post('/item/upload', [ItemController::class, 'store']);
-Route::post('/register', [ItemController::class, 'store']);
-Route::get('/mypage', [ItemController::class, 'mypage']);
+Route::get('/mypage', [AccountController::class, 'mypage']);
+Route::post('/item/upload', [ItemController::class, 'update'])->name('profile.update');

@@ -58,7 +58,7 @@
                 </div>
                 <div class="form__img-content">
                     <div class="form__input--img">
-                        <input type="file" name="avatar" class="form__input--text1">
+                        <input type="file" name="image" accept="image/*" class="form__input--text1">
                     </div>
                     <div class="form__error">
                         <!--バリデーション機能を実装したら記述します。-->

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccountTable extends Migration
+class AddImageToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateAccountTable extends Migration
      */
     public function up()
     {
-        Schema::create('account', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 20);
-            $table->string('email');
-            $table->integer('password');
-            $table->timestamps();
+        Schema::table('items', function (Blueprint $table) {
+            $table->string('image');  //カラム追加
         });
     }
 
@@ -29,6 +25,6 @@ class CreateAccountTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account');
+        Schema::dropIfExists('items');
     }
 }
