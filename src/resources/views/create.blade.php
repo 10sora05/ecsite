@@ -11,7 +11,10 @@
         <h2>商品出品</h2>
     </div>
     <div class="flex">
-        <form class="form" action="/item/upload" method="post">
+        <form class="form" action="/item/upload" method="post" enctype="multipart/form-data">
+            <!--
+        <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data">
+                        -->
             @csrf
             <div class="form__item-create">
                 <div class="form__item-title">

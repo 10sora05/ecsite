@@ -7,47 +7,36 @@
 @section('content')
 
 <div class="flex">
-    <div class="account-contents">
-        <div class="mypaje-top">
-            <h2>マイページ</h2>
-        </div>
-        <div class="account-name">
-            <h3>名前</h3>
-            <p>テスト太郎</p>
-        </div>
-
-        <div class="account-email">
-            <h3>メールアドレス</h3>
-
-        </div>
-
-        <div class="account-password">
-            <h3>パスワード</h3>
-
-        </div>
-
-        <div class="account-item">
-            <h3>出品商品一覧</h3>
-
-            @foreach ($Accounts as $Account)
-            <form class="update-form">
-                <div class="update-form__item">
-                    <p class="update-form__item-input">{{ $account['name'] }}</p>
-                </div>
-                <div class="update-form__item">
-                    <p class="update-form__item-input">{{ $account['email'] }}</p>
-                </div>
-                <div class="update-form__item">
-                    <p class="update-form__item-input">{{ $account['password'] }}</p>
-                </div>
-                <div class="update-form__button">
-                    <button class="update-form__button-submit" type="submit">更新</button>
-                </div>
-            </form>
-            @endforeach
-
-            
-        </div>
+    <div class="mypaje-top">
+        <h2>マイページ</h2>
     </div>
+
+    <form class="update-form">
+        <div class="update-contents">
+            <div class="update-form__item">
+                <h3>名前</h3>
+                <p class="update-form__account">{{ $user['name'] }}</p>
+            </div>
+
+            <div class="update-form__item">
+                <h3>メールアドレス</h3>
+                <p class="update-form__account">{{ $user['email'] }}</p>
+            </div>
+
+            <div class="update-form__item">
+                <h3>パスワード</h3>
+                <p class="update-form__iaccount">{{ $user['password'] }}</p>
+            </div>
+
+            <div class="update-form__button">
+                <button class="update-form__button-submit" type="submit">編集</button>
+            </div>
+
+            <div class="account-item">
+                <h3>出品商品一覧</h3>
+            </div>
+        </div>
+    </form>
 </div>
+
 @endsection
