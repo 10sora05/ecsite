@@ -49,14 +49,23 @@ class ItemController extends Controller
             ]);
         }
     }
+}
 
-    /*
-    public function store(Request $request)
-    {
-        // バリデーション（例: 画像ファイルのみ受け付ける）
-        $request->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-        ]);
+/*
+//画像が送信されてきていたら保存処理
+if ($image) {
+    //保存されたパス
+    $image_url = Storage::disk('public')->put('user_profile_image', $image, 'public'); //画像の保存処理
+    $user->image_url = $image_url;
+    $user->save();
+
+    // バリデーション（例: 画像ファイルのみ受け付ける）
+    $request->validate([
+        'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
+    ]);
+*/
+
+        /*
 
         // 画像を取得
         $image = $request->file('image');
@@ -69,7 +78,12 @@ class ItemController extends Controller
     }
 
         public function show($id)
+    {    public function store(Request $request)
     {
+        // バリデーション（例: 画像ファイルのみ受け付ける）
+        $request->validate([
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
+
         // IDで投稿を取得
         $post = Post::find($id);
 
@@ -78,4 +92,3 @@ class ItemController extends Controller
     }
 
         */
-}
